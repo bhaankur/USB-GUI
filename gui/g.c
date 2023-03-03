@@ -71,9 +71,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         return 0;
     }
     
- 
+     if(hwnd1 == NULL)
+    {
+        MessageBox(NULL, "Window Creation Failed!", "Error!",
+            MB_ICONEXCLAMATION | MB_OK);
+        return 0;
+    }
+    
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
+    ShowWindow(hwnd1, nCmdShow);
+    UpdateWindow(hwnd1);
 
 
     // Step 3: The Message Loop
